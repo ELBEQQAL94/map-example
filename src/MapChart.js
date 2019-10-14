@@ -17,22 +17,31 @@ const handleClick = (e, countryCode) => {
   console.log(countryCode);
 };
 
+const handleRegionClick = (e, countryCode) => {
+  console.log(countryCode);
+};
+
+const handleRegionTipShow = (e, tip, code) => {
+  console.log(code);
+};
+
 const Map = () => {
   return (
     <div>
       <VectorMap
         map={"world_mill"}
         backgroundColor="transparent" //change it to ocean blue: #0077be
-        zoomOnScroll={false}
         containerStyle={{
           width: "100%",
           height: "520px",
         }}
         onRegionClick={handleClick} //gets the country code
+        //onRegionSelected={handleRegionClick}
+        onRegionTipShow={handleRegionTipShow}
         containerClassName="map"
         regionStyle={{
           initial: {
-            fill: "#666666",
+            fill: "#ffffff",
             "fill-opacity": 0.4,
             stroke: "none",
             "stroke-width": 0,
@@ -40,16 +49,14 @@ const Map = () => {
           },
           hover: {
             fill: "#03dac4",
-            cursor: "pointer"
+            cursor: 'pointer'
           },
           selected: {
             fill: "#03dac4" //color for the clicked country
-          },
-          selectedHover: {},
+          }
 
         }}
         regionsSelectable={true}
-        
       />
     </div>
   );

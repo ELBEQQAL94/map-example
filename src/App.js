@@ -5,7 +5,7 @@ import Map from './MapChart';
 
 function App() {
   return (
-    <div>
+    <div style={{background: 'black'}}>
       <Map />
     </div>
   );
